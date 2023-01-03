@@ -13,7 +13,7 @@ spring:
             - springcloud-config
           username: BiXingyu
           password: Abcd1234@@@@@
-          default-label: main
+          default-label: master
           skip-ssl-validation: true
         #读取分支
 
