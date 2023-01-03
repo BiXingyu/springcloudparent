@@ -1,0 +1,31 @@
+2022-12-25 22:07:55.583  INFO 39184 --- [           main] ThreadTest                               : 线程19998已装填完成
+2022-12-25 22:07:55.583  INFO 39184 --- [           main] ThreadTest                               : 线程19999已装填完成
+2022-12-25 22:07:55.583  INFO 39184 --- [           main] ThreadTest                               : 线程20000已装填完成
+Exception in thread "Thread-14150" Exception in thread "Thread-14157" Exception in thread "Thread-15603" Exception in thread "Thread-15604" Exception in thread "Thread-14142" Exception in thread "Thread-18141" Exception in thread "Thread-15599" Exception in thread "Thread-14145" Exception in thread "Thread-18142" Exception in thread "Thread-18140" Exception in thread "Thread-14141" Exception in thread "Thread-18139" Exception in thread "Thread-15600" Exception in thread "Thread-14202" Exception in thread "Thread-15612" Exception in thread "Thread-14490" Exception in thread "Thread-14181" Exception in thread "Thread-14385" Exception in thread "Thread-17704" org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8001/payment/hystrix/timeout/19999": No buffer space available (maximum connections reached?): connect; nested exception is java.net.SocketException: No buffer space available (maximum connections reached?): connect
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:751)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:677)
+	at org.springframework.web.client.RestTemplate.getForObject(RestTemplate.java:318)
+	at ThreadTest$UrlThread.run(ThreadTest.java:48)
+Caused by: java.net.SocketException: No buffer space available (maximum connections reached?): connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:75)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:476)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:218)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:200)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:162)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:394)
+	at java.net.Socket.connect(Socket.java:606)
+	at java.net.Socket.connect(Socket.java:555)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:180)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:499)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:594)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:278)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:375)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:393)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1240)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1167)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1061)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:995)
+	at org.springframework.http.client.SimpleBufferingClientHttpRequest.executeInternal(SimpleBufferingClientHttpRequest.java:76)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:53)
